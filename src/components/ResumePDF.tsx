@@ -2,121 +2,119 @@ import React, { forwardRef } from 'react';
 import { heroData } from './Hero';
 import { aboutData } from './About';
 import { experiencesData } from './Experience';
-import { certificationsData } from './Certifications';
 import { skillsData } from './Skills';
-
-const sectionTitle = (title: string) => (
-  <h3 style={{
-    fontSize: 20,
-    color: '#6d28d9',
-    margin: '0 0 12px 0',
-    letterSpacing: 1,
-    borderBottom: '2px solid #a78bfa',
-    paddingBottom: 4,
-    fontWeight: 700,
-    textTransform: 'uppercase',
-  }}>{title}</h3>
-);
+import { certificationsData } from './Certifications';
 
 const ResumePDF = forwardRef<HTMLDivElement>((props, ref) => (
   <div
     ref={ref}
-    style={{
-      fontFamily: 'Inter, Arial, sans-serif',
-      background: '#fff',
-      color: '#18181b',
-      padding: 36,
-      width: 800,
-      margin: '0 auto',
-      borderRadius: 16,
-      boxShadow: '0 4px 32px #e0e7ef44',
-      boxSizing: 'border-box',
-    }}
+    className="w-[800px] mx-auto rounded-xl shadow-2xl overflow-hidden font-sans"
+    style={{ fontFamily: 'Inter, Arial, sans-serif' }}
   >
-    {/* Header */}
-    <div style={{ display: 'flex', alignItems: 'center', gap: 32, marginBottom: 32 }}>
-      <img
-        src={heroData.profileImage}
-        alt="Profile"
-        style={{
-          width: 110,
-          height: 110,
-          borderRadius: '50%',
-          border: '3px solid #a78bfa',
-          objectFit: 'cover',
-          boxShadow: '0 2px 12px #a78bfa33',
-        }}
-      />
-      <div style={{ flex: 1 }}>
-        <h1 style={{ fontSize: 36, fontWeight: 800, margin: 0, color: '#6d28d9', letterSpacing: 1 }}>{heroData.name}</h1>
-        <h2 style={{ fontSize: 18, fontWeight: 500, margin: '8px 0 0 0', color: '#334155' }}>{heroData.title}</h2>
-        <a
-          href={heroData.linkedIn}
-          style={{ color: '#2563eb', fontSize: 15, textDecoration: 'underline', marginTop: 8, display: 'inline-block' }}
-        >
-          LinkedIn
-        </a>
-      </div>
-    </div>
-    {/* About */}
-    <section style={{ marginBottom: 24 }}>
-      {sectionTitle('About Me')}
-      {aboutData.paragraphs.map((p: string, i: number) => (
-        <p key={i} style={{ fontSize: 15, margin: '8px 0', color: '#334155', lineHeight: 1.6 }}>{p}</p>
-      ))}
-    </section>
-    {/* Skills */}
-    <section style={{ marginBottom: 24 }}>
-      {sectionTitle('Skills')}
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
-        {skillsData.map((cat: any) => (
-          <div
-            key={cat.title}
-            style={{
-              background: '#f1f5f9',
-              borderRadius: 8,
-              padding: '8px 14px',
-              minWidth: 120,
-              marginBottom: 6,
-              fontSize: 14,
-              color: '#334155',
-              fontWeight: 500,
-              boxShadow: '0 1px 4px #a78bfa11',
-            }}
-          >
-            <div style={{ fontWeight: 700, color: '#6d28d9', marginBottom: 2 }}>{cat.title}</div>
-            <div>{cat.skills.join(', ')}</div>
+    <div className="flex h-full">
+      {/* Left Column */}
+      <div className="bg-black text-white w-1/3 flex flex-col items-center py-8 px-4 min-h-full">
+        <img
+          src={heroData.profileImage}
+          alt="Profile"
+          className="w-32 h-32 rounded-full border-4 border-white object-cover mb-6 shadow-lg"
+        />
+        <h1 className="text-2xl font-bold mb-1">{heroData.name}</h1>
+        <h2 className="text-lg font-medium mb-6">{heroData.title}</h2>
+        {/* Contact */}
+        <div className="w-full mb-6">
+          <h3 className="text-base font-semibold border-b border-gray-600 pb-1 mb-2">CONTACT</h3>
+          <div className="text-sm mb-2">
+            <span className="block font-semibold">Email</span>
+            <a href={`mailto:${heroData.email}`} className="underline text-blue-400 break-all">{heroData.email}</a>
           </div>
-        ))}
-      </div>
-    </section>
-    {/* Experience */}
-    <section style={{ marginBottom: 24 }}>
-      {sectionTitle('Experience')}
-      {experiencesData.map((exp: any, i: number) => (
-        <div key={i} style={{ marginBottom: 18, paddingBottom: 10, borderBottom: '1px solid #e0e7ef' }}>
-          <div style={{ fontWeight: 700, fontSize: 16, color: '#18181b' }}>{exp.role} <span style={{ color: '#6d28d9' }}>@ {exp.company}</span></div>
-          <div style={{ fontSize: 13, color: '#64748b', marginBottom: 4 }}>{exp.location} | {exp.duration}</div>
-          <ul style={{ margin: '8px 0 0 20px', fontSize: 14, color: '#334155', lineHeight: 1.5 }}>
-            {exp.description.map((d: string, j: number) => (
-              <li key={j}>{d}</li>
+          <div className="text-sm mb-2">
+            <span className="block font-semibold">Phone</span>
+            <a href={`tel:${heroData.phone}`} className="underline text-blue-400">{heroData.phone}</a>
+          </div>
+          <div className="text-sm mb-2">
+            <span className="block font-semibold">Address</span>
+            {heroData.address}
+          </div>
+          <div className="text-sm mb-2">
+            <span className="block font-semibold">LinkedIn</span>
+            <a href={heroData.linkedIn} className="underline text-blue-400 break-all" target="_blank" rel="noopener noreferrer">{heroData.linkedIn}</a>
+          </div>
+          <div className="text-sm">
+            <span className="block font-semibold">GitHub</span>
+            <a href={heroData.github} className="underline text-blue-400 break-all" target="_blank" rel="noopener noreferrer">{heroData.github}</a>
+          </div>
+        </div>
+        {/* Languages */}
+        <div className="w-full mb-6">
+          <h3 className="text-base font-semibold border-b border-gray-600 pb-1 mb-2">LANGUAGES</h3>
+          <ul className="text-sm list-disc list-inside">
+            <li>English: Fluent</li>
+            <li>Hindi: Native</li>
+          </ul>
+        </div>
+        {/* Certificates */}
+        <div className="w-full">
+          <h3 className="text-base font-semibold border-b border-gray-600 pb-1 mb-2">CERTIFICATES</h3>
+          <ul className="text-sm list-disc list-inside">
+            {certificationsData.map((cert, idx) => (
+              <li key={idx}>{cert.title}</li>
             ))}
           </ul>
-          <div style={{ fontSize: 13, color: '#a78bfa', marginTop: 4 }}>{exp.technologies.join(', ')}</div>
         </div>
-      ))}
-    </section>
-    {/* Certifications */}
-    <section>
-      {sectionTitle('Certifications')}
-      <ul style={{ fontSize: 14, margin: 0, padding: 0, listStyle: 'none', color: '#334155' }}>
-        {certificationsData.map((cert: any, i: number) => (
-          <li key={i} style={{ marginBottom: 10, paddingBottom: 6, borderBottom: '1px solid #e0e7ef' }}>
-            <span style={{ fontWeight: 700, color: '#6d28d9' }}>{cert.title}</span> - <span style={{ color: '#2563eb' }}>{cert.issuer}</span> ({cert.date})
-          </li>
-        ))}
-      </ul>
-    </section>
+      </div>
+      {/* Right Column */}
+      <div className="bg-white text-black w-2/3 p-10">
+        {/* Summary */}
+        <div className="mb-6">
+          <h3 className="text-xl font-bold mb-2">SUMMARY</h3>
+          {aboutData.paragraphs.map((p: string, i: number) => (
+            <p key={i} className="text-sm leading-relaxed text-gray-800 mb-2">{p}</p>
+          ))}
+        </div>
+        {/* Experience */}
+        <div className="mb-6">
+          <h3 className="text-xl font-bold mb-2">EXPERIENCE</h3>
+          {experiencesData.map((exp, i) => (
+            <div key={i} className="mb-4">
+              <div className="font-semibold text-base">
+                {exp.role} <span className="text-purple-700">@ {exp.company}</span>
+              </div>
+              <div className="text-xs text-gray-500 mb-1">{exp.location} | {exp.duration}</div>
+              <ul className="text-xs list-disc list-inside mb-1">
+                {exp.description.map((d: string, j: number) => (
+                  <li key={j}>{d}</li>
+                ))}
+              </ul>
+              <div className="text-xs text-purple-500 mb-2">{exp.technologies.join(', ')}</div>
+            </div>
+          ))}
+        </div>
+        {/* Skills */}
+        <div className="mb-6">
+          <h3 className="text-xl font-bold mb-2">SKILLS</h3>
+          <div className="grid grid-cols-2 gap-2 text-sm">
+            {skillsData.map((cat, i) => (
+              <div key={i}>
+                <div className="font-semibold text-purple-700 mb-1">{cat.title}</div>
+                <div>{cat.skills.join(', ')}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* Certifications */}
+        <div className="mb-6">
+          <h3 className="text-xl font-bold mb-2">CERTIFICATIONS</h3>
+          <ul className="text-sm list-disc list-inside">
+            {certificationsData.map((cert, idx) => (
+              <li key={idx}>
+                <span className="font-semibold text-purple-700">{cert.title}</span> - <span className="text-blue-700">{cert.issuer}</span> ({cert.date})
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 ));
 

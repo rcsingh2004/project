@@ -11,7 +11,11 @@ export const heroData = {
   title: "ML & Generative AI Engineer | Python Developer",
   profileImage: "/profile..jpg",
   resumeUrl: "/resume.pdf",
-  linkedIn: "https://www.linkedin.com/in/rajasva-singh-choudhary-531104260/"
+  linkedIn: "https://www.linkedin.com/in/rajasva-singh-choudhary-531104260/",
+  email: "rcsingh2004@gmail.com",
+  phone: "9024563197",
+  address: "ajmer rajasthan",
+  github: "https://github.com/rcsingh2004"
 };
 
 const Hero: React.FC = () => {
@@ -37,11 +41,11 @@ const Hero: React.FC = () => {
   };
   // Open LinkedIn profile handler
   const handleProfileClick = () => {
-    window.open('https://www.linkedin.com/in/rajasva-singh-choudhary-531104260/', '_blank');
+    window.open(heroData.linkedIn, '_blank');
   };
   // Open GitHub profile handler
   const handleGithubClick = () => {
-    window.open('https://github.com/rajasvachoudhary', '_blank');
+    window.open(heroData.github, '_blank');
   };
 
   return (
@@ -152,9 +156,9 @@ const Hero: React.FC = () => {
         </div>
       </Tilt>
     </section>
-    {/* Render ResumePDF visibly to ensure html2canvas works */}
-    <div ref={resumeSectionRef} style={{ background: '#fff', color: '#18181b', padding: 36, width: 800, margin: '32px auto', border: '2px solid #a78bfa', borderRadius: 16 }}>
-      <ResumePDF />
+    {/* Render ResumePDF off-screen for download only */}
+    <div style={{ position: 'absolute', left: '-9999px', width: 0, height: 0, overflow: 'hidden' }}>
+      <ResumePDF ref={resumeSectionRef} />
     </div>
     </>
   );

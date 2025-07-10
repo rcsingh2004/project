@@ -13,6 +13,19 @@ import ParticleBackground from './components/ParticleBackground';
 function App() {
   return (
     <div className="relative bg-gray-900 text-white overflow-x-hidden">
+      {/* Glowing Gradient Background */}
+      <div
+        aria-hidden="true"
+        className="fixed inset-0 z-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(circle at 20% 30%, rgba(6,182,212,0.25) 0, transparent 60%),' +
+            'radial-gradient(circle at 80% 70%, rgba(139,92,246,0.20) 0, transparent 60%),' +
+            'radial-gradient(circle at 50% 90%, rgba(236,72,153,0.15) 0, transparent 60%)',
+          filter: 'blur(40px)',
+          zIndex: 0,
+        }}
+      />
       <ParticleBackground />
       <Navigation />
       <main className="relative z-10">

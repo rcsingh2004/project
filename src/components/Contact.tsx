@@ -144,8 +144,8 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Email</p>
-                    <a href="mailto:rajasva@example.com" className="text-cyan-300 hover:text-cyan-200 transition-colors duration-300">
-                      rajasva@example.com
+                    <a href="mailto:rcsingh2004@gmail.com" className="text-cyan-300 hover:text-cyan-200 transition-colors duration-300">
+                      rcsingh2004@gmail.com
                     </a>
                   </div>
                 </div>
@@ -156,8 +156,8 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Phone</p>
-                    <a href="tel:+91XXXXXXXXXX" className="text-cyan-300 hover:text-cyan-200 transition-colors duration-300">
-                      +91 XXXXX XXXXX
+                    <a href="tel:9024563197" className="text-cyan-300 hover:text-cyan-200 transition-colors duration-300">
+                      9024563197
                     </a>
                   </div>
                 </div>
@@ -168,7 +168,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Location</p>
-                    <p className="text-cyan-300">Jaipur, India</p>
+                    <p className="text-cyan-300">Ajmer, Rajasthan</p>
                   </div>
                 </div>
               </div>
@@ -179,23 +179,20 @@ const Contact: React.FC = () => {
               
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  href="https://github.com/rcsingh2004"
                   className="w-12 h-12 bg-gray-700 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-purple-600 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/25"
+                  target="_blank" rel="noopener noreferrer"
                 >
                   <Github size={20} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/rajasva-singh-choudhary-531104260/"
                   className="w-12 h-12 bg-gray-700 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-purple-600 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/25"
+                  target="_blank" rel="noopener noreferrer"
                 >
                   <Linkedin size={20} />
                 </a>
-                <a
-                  href="#"
-                  className="w-12 h-12 bg-gray-700 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-purple-600 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/25"
-                >
-                  <Twitter size={20} />
-                </a>
+                {/* Remove or update Twitter as needed */}
               </div>
             </div>
           </div>
