@@ -94,6 +94,7 @@ const Hero: React.FC = () => {
                   src="/profile..jpg"
                   alt="Profile"
                   className="w-full h-full object-cover rounded-full border-4 border-gray-800 shadow-lg"
+                  loading="lazy"
                 />
               </div>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-300"></div>

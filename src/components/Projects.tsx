@@ -79,6 +79,7 @@ const Projects: React.FC = () => {
                       src={project.image}
                       alt={project.title}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-80"></div>
                     <div className="absolute top-4 right-4 text-orange-300">
