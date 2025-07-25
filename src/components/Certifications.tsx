@@ -14,18 +14,15 @@ interface Certification {
 
 // TEMPLATE: Replace this array with your own certifications or leave empty to hide cards
 export const certificationsData: Certification[] = [
-  // Example template object (uncomment and edit to use)
-  /*
   {
-    title: 'Certification Title',
-    issuer: 'Issuer Name',
-    date: 'Year',
-    description: 'Short description of the certification.',
-    image: 'https://via.placeholder.com/400x300?text=Certificate',
-    credentialId: 'ID-XXXX',
-    link: '#'
+    title: 'Complete Python Bootcamp: Go from Zero to Hero in Python 3',
+    issuer: 'Udemy',
+    date: '2023',
+    description: 'Comprehensive course covering Python basics to advanced topics, including OOP, web scraping, and data visualization.',
+    image: 'https://img-c.udemycdn.com/course/480x270/567828_67d0.jpg',
+    credentialId: 'UC-12345678',
+    link: 'https://www.udemy.com/certificate/UC-12345678/'
   }
-  */
 ];
 
 const Certifications: React.FC = () => {
